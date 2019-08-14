@@ -9,7 +9,7 @@ export default class Main extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8888/`).then(res=>{
+        axios.get(`http://localhost:8883/`).then(res=>{
             // console.log(res.data);
             this.setState(res.data);
         })
