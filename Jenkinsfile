@@ -5,12 +5,12 @@ pipeline {
     stages {
         stage ('Compile Stage') {
             steps {
-                 bat 'mvn -f Login_Service_Backend/pom.xml clean install'
+                 bat 'mvn -f Registration_Backend/pom.xml clean install'
             }
         }
         stage ('Testing Stage') {
             steps {
-               bat 'mvn -f Login_Service_Backend/pom.xml test'
+               bat 'mvn -f Registration_Backend/pom.xml test'
             }
         }
     }
