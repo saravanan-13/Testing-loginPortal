@@ -20,7 +20,7 @@ public class ReactController {
 	@Autowired
 	ObjectMapper mapper;
 
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/")
 	public ObjectNode getdata() {
 		List<User> userList = userService.getAllUsers();
