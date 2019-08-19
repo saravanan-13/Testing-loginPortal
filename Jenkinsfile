@@ -15,6 +15,5 @@ pipeline {
                  sh 'sudo cd Registration_Frontend/build && sudo nohup python -m http.server 8884 &'
             }
         }
-        
     }
 }
