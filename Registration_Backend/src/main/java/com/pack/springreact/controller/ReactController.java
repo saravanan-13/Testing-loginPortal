@@ -22,8 +22,8 @@ public class ReactController {
 
 	@CrossOrigin(origins = "*")
 	@GetMapping("/")
-	public ObjectNode getdata() {
-		List<User> userList = userService.getAllUsers();
+	public String getdata() {
+		/*List<User> userList = userService.getAllUsers();
 		ObjectNode objectNode = mapper.createObjectNode();
 
 		for (User user : userList) {
@@ -31,7 +31,8 @@ public class ReactController {
 			objectNode.put("email", user.getEmail());
 			objectNode.put("name", user.getName());
 		}
+		*/
 
-		return objectNode;
+		return "SSSSS";
 	}
 }
