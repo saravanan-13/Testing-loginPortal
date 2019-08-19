@@ -6,8 +6,14 @@ pipeline {
         stage ('Compile Stage') {
             steps {
                  bat 'mvn -f Registration_Backend/pom.xml clean install'
-                 bat 'cd Registration_Backend && npm install && npm run build'
+                 bat 'cd Registration_Frontend && npm install && npm run build'
             }
         }
+        stage ('Deploy Stage') {
+            steps {
+                 bat 'java -jar Registration_Backend/target/Registration_Backend.jar'
+            }
+        }
+        
     }
 }
