@@ -9,11 +9,6 @@ pipeline {
                  bat 'cd Registration_Backend && npm install && npm run build'
             }
         }
-        stage ('Testing Stage') {
-            steps {
-               bat 'mvn -f Registration_Backend/pom.xml test'
-            }
-        }
     }
 }
 © 2019 GitHub,
