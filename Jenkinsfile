@@ -6,7 +6,7 @@ pipeline {
         stage ('Compile Stage') {
             steps {
                  sh 'cd Registration_Backend'
-                 sh 'sudo mvn clean'
+                 sh 'mvn clean'
                
             }
         }
