@@ -12,6 +12,7 @@ pipeline {
         stage ('Deploy Stage') {
             steps {
                  bat 'java -jar Registration_Backend/target/Registration_Backend.jar'
+                 bat 'cd Registration_Frontend/build && python -m http.server 8884'
             }
         }
         
