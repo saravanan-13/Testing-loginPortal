@@ -5,8 +5,7 @@ pipeline {
     stages {
         stage ('Compile Stage') {
             steps {
-                 sh 'cd Registration_Backend'
-                 sh 'mvn clean'
+                 sh 'mvn -f Registration_Backend/pom.xml clean'
                
             }
         }
