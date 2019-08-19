@@ -10,12 +10,5 @@ pipeline {
             }
         }
         
-        stage ('Deploy Stage') {
-            steps {
-                 sh 'java -jar Registration_Backend/target/Registration_Backend.jar'
-               
-            }
-        }
-        
     }
 }
