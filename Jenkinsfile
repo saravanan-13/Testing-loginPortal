@@ -10,6 +10,7 @@ pipeline {
                  bat 'mvn -f User_Confirmation_Backend/pom.xml clean install'
                  bat 'mvn -f Login_Service_Backend/pom.xml clean install'
                  bat 'mvn -f Forget_Password_Backend/pom.xml clean install'
+                 bat 'cd Registration_Frontend && npm install && npm run build'
             }
         }
         stage ('Testing Stage') {
