@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.13.0" timestamp="2019-08-22T10:41:31.798">
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\controller\Mycontroller.java">
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="43" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.controller" class="Mycontroller" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.springframework.http.HttpStatus'
+</violation>
+<violation beginline="20" endline="20" begincolumn="1" endcolumn="72" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.controller" class="Mycontroller" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.springframework.http.MediaType.APPLICATION_JSON_VALUE'
+</violation>
+<violation beginline="21" endline="21" begincolumn="1" endcolumn="71" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.controller" class="Mycontroller" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.springframework.http.MediaType.APPLICATION_XML_VALUE'
+</violation>
+</file>
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\model\CustomPasswordEncoder.java">
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="46" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.model" class="CustomPasswordEncoder" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.springframework.stereotype.Service'
+</violation>
+</file>
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\model\Password.java">
+<violation beginline="18" endline="18" begincolumn="22" endcolumn="27" rule="UnusedPrivateField" ruleset="Best Practices" package="com.pack.register.model" class="Password" variable="passId" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'passId'.
+</violation>
+</file>
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\model\SecurityAnswer.java">
+<violation beginline="17" endline="17" begincolumn="22" endcolumn="26" rule="UnusedPrivateField" ruleset="Best Practices" package="com.pack.register.model" class="SecurityAnswer" variable="secId" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'secId'.
+</violation>
+</file>
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\model\User.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="28" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.model" class="User" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.io.Serializable'
+</violation>
+<violation beginline="14" endline="14" begincolumn="1" endcolumn="36" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.model" class="User" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'javax.persistence.JoinColumn'
+</violation>
+</file>
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\repository\SecurityQuestionRepository.java">
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="36" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.repository" class="SecurityQuestionRepository" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'com.pack.register.model.User'
+</violation>
+</file>
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\repository\UserRepository.java">
+<violation beginline="2" endline="2" begincolumn="1" endcolumn="22" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.repository" class="UserRepository" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util.List'
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="53" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.repository" class="UserRepository" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.springframework.data.jpa.repository.Query'
+</violation>
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="55" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.repository" class="UserRepository" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.springframework.data.repository.query.Param'
+</violation>
+<violation beginline="9" endline="9" begincolumn="1" endcolumn="48" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.repository" class="UserRepository" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'com.pack.register.model.SecurityQuestion'
+</violation>
+</file>
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\service\SecurityQuestionServiceImpl.java">
+<violation beginline="11" endline="11" begincolumn="1" endcolumn="51" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.service" class="SecurityQuestionServiceImpl" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'com.pack.register.repository.UserRepository'
+</violation>
+</file>
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\service\UserService.java">
+<violation beginline="6" endline="6" begincolumn="16" endcolumn="40" rule="UnnecessaryModifier" ruleset="Code Style" package="com.pack.register.service" class="UserService" method="saveUser" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifier 'public' on method 'saveUser': the method is declared in an interface type
+</violation>
+</file>
+<file name="C:\Users\sarrajen\Documents\loginPortal\Register_Backend\src\main\java\com\pack\register\service\UserServiceImpl.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="22" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.service" class="UserServiceImpl" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util.List'
+</violation>
+<violation beginline="9" endline="9" begincolumn="1" endcolumn="64" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.service" class="UserServiceImpl" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.springframework.transaction.annotation.Transactional'
+</violation>
+<violation beginline="13" endline="13" begincolumn="1" endcolumn="46" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.service" class="UserServiceImpl" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'com.pack.register.model.SecurityAnswer'
+</violation>
+<violation beginline="14" endline="14" begincolumn="1" endcolumn="48" rule="UnusedImports" ruleset="Best Practices" package="com.pack.register.service" class="UserServiceImpl" externalInfoUrl="https://pmd.github.io/pmd-6.13.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'com.pack.register.model.SecurityQuestion'
+</violation>
+</file>
+</pmd>

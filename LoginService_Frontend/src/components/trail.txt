@@ -1,0 +1,168 @@
+import React, {Component} from 'react';
+import '../App.css';
+//import {Button , div, label, Input, Form , FormGroup}
+//from 'reactstrap';
+import Axios from 'axios';
+//import { browserHistory } from 'react-router';
+//import Axios from 'axios';
+// import {FacebookLoginButton} from 'react-social-login-buttons';
+ 
+
+class Forms extends Component {
+
+  constructor(){
+    super();
+    this.state={
+      username:'',
+      hpassword:'',
+      // fields: {username: '',
+      //          hpassword:''
+      //         },
+      errors: {}
+
+    }
+   // this.sendData=this.sendData.bind(this)
+    this.eventhandler=this.eventhandler.bind(this);
+    this.user = this.user.bind(this);
+    this.clear=this.clear.bind(this);
+    //this.validateEmailorUserID=this.validateEmailorUserID.bind(this);
+    this.validateForm=this.validateForm.bind(this);
+  }
+  user(arg) {
+    arg.preventDefault()    
+    this.validateForm()
+  }
+
+
+ eventhandler(e){
+   //console.log(this.state);
+   this.setState({[e.target.name] : e.target.value})
+
+  //  let fields = this.state.fields;
+  //     fields[e.target.name] = e.target.value;
+  //     this.setState({
+  //       fields
+  //     });
+
+   
+ }
+ 
+//  validateEmailorUserID(args) {
+//   var mailformat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+//   console.log(`User ${mailformat.test(args)}`)
+//   return mailformat.test(args) ? true : false
+// }
+
+
+
+validateForm() {
+
+  //let fields = this.state.fields;
+  var pattern =  /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+  //console.log(this.state.userObject.emailID)
+  let flag=pattern.test(this.state.username);
+   if(flag){
+      var userObject = {
+      emailID: this.state.username,
+      hashedpwd: this.state.hpassword
+     }
+   } else{     
+  
+        // formIsValid=false;
+        this.state.errors["username"] = "*Please enter valid User ID.";
+        return
+  
+   }
+  
+   if(this.state.username.match(/^[0-9]*$/)){
+    userObject = {
+      userID: this.state.username,
+      hashedpwd: this.state.hpassword
+     }
+  } else {
+    // formIsValid=false;
+    this.state.errors["username"] = "*Please enter valid email.";
+        return
+  }
+
+   if (!this.state.hpassword) {
+    // formIsValid = false;
+    this.state.errors["hpassword"] = "*This Field can not be empty";
+    return
+  }
+
+  if (typeof this.state.hpassword !== "undefined") {
+    if (!this.state.hpassword.match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/)) {
+      // formIsValid = false;
+      this.state.errors["hpassword"] = "*Please enter secure and strong password.";
+    } else {
+      // let userObject = this.state.userObject;
+        console.log(`email: ${userObject.emailID}`)
+        console.log(`UserID: ${userObject.userID}`)
+        Axios.post('http://10.150.176.115:8092/api/authenticate',userObject)
+        .then(res=>console.log(res.data
+         )).catch(error => {
+          console.log(error.response)
+      });
+        //  let fields = {};
+        //  fields["username"] = "";
+        //  fields["hpassword"] = "";
+         this.setState({username:"",
+                        hpassword:""
+                      });
+      
+        }
+    }
+  }
+
+
+clear=()=>{
+ 
+  this.setState({
+    username:'',
+    hpassword:''
+   })
+}
+
+welcome(){
+  console.log("welcome");
+}
+
+render()
+{
+  return (
+   // console.log(this.props.userData),
+    <form id="form" action="/">
+    <div  className="text-center">    
+    <h1 className="text-center">Login Page</h1>
+    
+    
+          <label>Username:</label>
+          <input  type="text" name="username" value={this.state.username} ref="clearUname" onChange={this.eventhandler} placeholder="Username/Email" required></input>
+          <div className="errorMsg">{this.state.errors.username}</div>
+          <br/>
+          <br/>
+          <label>Password:</label>
+          <input  type="password" name="hpassword" value={this.state.hpassword} ref="clearPwd" onChange={this.eventhandler} placeholder="Password" required></input>    
+          <div className="errorMsg">{this.state.errors.hpassword}</div>
+          <br/>
+          <br/>
+        <button  type="submit" onClick= {this.user} >Log in</button>  
+        <button  onClick={this.clear} >Reset</button>
+        
+        {/* <div className="text-center pt-3" >or continue with Social Login</div>
+        <FacebookLoginButton className="mt-3 mb-3"/> */}
+    </div>
+      <div className="text-center">
+        <a href="https://google.com">Sign Up</a>
+      {/* <button  onClick="welcome">Sign Up</button> */}
+      <span className="p-2">|</span>
+      <a  href="http://10.150.223.154:3003/forgotpassword">Forgot Password</a>
+         
+    </div>
+    </form>
+
+  )
+}
+}
+export default Forms;

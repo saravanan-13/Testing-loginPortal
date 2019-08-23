@@ -3,18 +3,59 @@ pipeline {
     agent any
     
     stages {
-         stage ('Compile Stage') {
+     /*   
+         stage ('Stop Ports Running'){
             steps {
-                 bat 'mvn -f Registration_Backend/pom.xml clean install'
-                 bat 'cd Registration_Frontend && npm install && npm run build'
+              bat 'stop_port.bat'
+            }
+       
+        }
+         */
+        
+        stage ('Compile Stage') {
+             steps {
+                
+               bat 'mvn -f Register_Backend/pom.xml clean install pmd:pmd sonar:sonar'
+               bat 'cd Register_Frontend && npm install && npm run build'
+            
+               bat 'mvn -f UserConfirmation_Backend/pom.xml clean install pmd:pmd sonar:sonar'
+               bat 'cd UserConfirmation_Frontend && npm install && npm run build'
+                 
+               bat 'mvn -f Forgotpassword_Backend/pom.xml clean install pmd:pmd sonar:sonar'
+               bat 'cd forgotpassword_frontend && npm install && npm run build'
+            
+               bat 'mvn -f DataRetrievalService_BackEnd/pom.xml clean install pmd:pmd sonar:sonar'
+               bat 'mvn -f LoginService_BackEnd/pom.xml clean install pmd:pmd sonar:sonar'
+               bat 'cd LoginService_Frontend && npm install && npm run build'
+                
+               bat 'mvn -f ChangePasswordService_Backend/pom.xml clean install pmd:pmd sonar:sonar'
+               bat 'cd ChangePasswordService_Frontend && npm install && npm run build'
+            
+               bat 'mvn -f Admin_Backend/pom.xml clean install pmd:pmd sonar:sonar'
+               bat 'cd Admin_Frontend && npm install && npm run build'
+                
+              bat 'mvn -f Edit_Profile_Backend/pom.xml clean install pmd:pmd sonar:sonar'
+              bat 'cd Edit_Profile_Frontend && npm install && npm run build'
+            
+                 
             }
          }
-        stage ('Deploy Stage') {
+       
+        stage ('Code Review'){
             steps {
-                 bat 'start java -jar Registration_Backend/target/Registration_Backend.jar'
-                 bat 'cd Registration_Frontend && cd build && start python -m http.server 8884'
+               script {
+                step([$class: 'PmdPublisher', pattern: '**/target/pmd.xml'])
+                }
             }
-        }
         
+        }
+         
+         
+         stage ('Deploy Stage') {
+            steps {
+                bat 'deploy.bat'
+            }
+         }
+         
     }
 }
